@@ -12,6 +12,7 @@ Automation Tests to verify posting in Twitter.
 ## Run Tests
 
 * Download the repo from Github
+* Build solution in Visual Studio or use nuget.exe command ```nuget install packages.config```
 * Tests can be run by running ```runtests.cmd``` 
 * Test Report is found in ```TestResults\TestResults.html```
 * Test can also be run in Visual Studio test explorer
