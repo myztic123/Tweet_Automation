@@ -1,0 +1,30 @@
+=> Tweet_automation.Features.PostLongTweetFeature.DisallowPostingATweetMoreThan280Chars("Sometimes we make the process more complicated than we need to. We will never make a journey of a thousand miles by fretting about how long it will take or how hard it will be. We make the journey by taking each day step by step and then repeating it again and again until we reach our destination.",null)
+Given I have logged into Twitter
+-> done: PostNewTweetSteps.GivenIHaveLoggedIntoTwitter() (3.5s)
+When I type a tweet Sometimes we make the process more complicated than we need to. We will never make a journey of a thousand miles by fretting about how long it will take or how hard it will be. We make the journey by taking each day step by step and then repeating it again and again until we reach our destination.
+-> done: PostNewTweetSteps.WhenITypeATweet("Sometimes we make...") (1.8s)
+Then I am unable to post it
+-> done: PostLongTweetSteps.ThenIAmUnableToPostIt() (0.0s)
+And the tweet counter is less than 0
+-> done: PostLongTweetSteps.ThenTheTweetCounterIsLessThan0() (0.3s)
+=> Tweet_automation.Features.PostLongTweetFeature
+-> Using app.config
+=> Tweet_automation.Features.PostNewTweetFeature.PostANewTweetLessThan280Chars("\"Daenerys of the House Targaryen, the First of Her Name, The Unburnt, Queen of the Andals, the Rhoynar and the First Men, Queen of Meereen, Khaleesi of the Great Grass Sea, Protector of the Realm, Lady Regnant of the Seven Kingdoms, Breaker of Chains and Mother of Dragons.\" GOT",null)
+Given I have logged into Twitter
+-> done: PostNewTweetSteps.GivenIHaveLoggedIntoTwitter() (3.5s)
+When I type a tweet "Daenerys of the House Targaryen, the First of Her Name, The Unburnt, Queen of the Andals, the Rhoynar and the First Men, Queen of Meereen, Khaleesi of the Great Grass Sea, Protector of the Realm, Lady Regnant of the Seven Kingdoms, Breaker of Chains and Mother of Dragons." GOT
+-> done: PostNewTweetSteps.WhenITypeATweet(""Daenerys of the ...") (1.8s)
+And I post a tweet
+-> done: PostNewTweetSteps.WhenIPostATweet() (0.1s)
+Then the "Daenerys of the House Targaryen, the First of Her Name, The Unburnt, Queen of the Andals, the Rhoynar and the First Men, Queen of Meereen, Khaleesi of the Great Grass Sea, Protector of the Realm, Lady Regnant of the Seven Kingdoms, Breaker of Chains and Mother of Dragons." GOT post appears on my home page
+-> done: PostNewTweetSteps.ThenThePostAppearsOnMyHomePage(""Daenerys of the ...") (0.6s)
+And there is an option to reply
+-> done: PostNewTweetSteps.ThenThereIsAnOption("reply") (0.0s)
+And there is an option to retweet
+-> done: PostNewTweetSteps.ThenThereIsAnOption("retweet") (0.1s)
+And there is an option to like
+-> done: PostNewTweetSteps.ThenThereIsAnOption("like") (0.0s)
+And there is an option to view tweet activity
+-> done: PostNewTweetSteps.ThenThereIsAnOption("view tweet activity") (0.0s)
+And I can delete my tweet
+-> done: PostNewTweetSteps.ThenICanDeleteMyTweet() (1.3s)
