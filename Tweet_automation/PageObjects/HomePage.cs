@@ -1,5 +1,4 @@
-﻿using System.Configuration;
-using Coypu;
+﻿using Coypu;
 using NUnit.Framework;
 using Tweet_automation.Helpers;
 
@@ -12,6 +11,13 @@ namespace Tweet_automation.PageObjects
         {
             _browser.FindId("tweet-box-home-timeline").FillInWith(tweetText);
         }
+
+        public void TypeTweetAgain(string tweetText)
+        {
+            _browser.ClickLink("home timeline");
+            _browser.FindId("tweet-box-home-timeline").FillInWith(tweetText);
+        }
+
         public void PostTweet()
         {
             _browser.FindCss(".tweeting-text").Click();
@@ -62,6 +68,17 @@ namespace Tweet_automation.PageObjects
         {
             string tweetCounter = _browser.FindCss(".tweet-counter").Text;
             Assert.Less(int.Parse(tweetCounter), 0);
+        }
+
+        public void ValidateRepeatNotification()
+        {
+            string tweetNotification = _browser.FindCss(".message-text").Text;
+            StringAssert.AreEqualIgnoringCase("You have already sent this Tweet.", tweetNotification);
+        }
+
+        public void DismissNotification()
+        {
+            _browser.FindCss(".Icon.Icon--close.Icon--medium.dismiss").Click();
         }
     }
 }

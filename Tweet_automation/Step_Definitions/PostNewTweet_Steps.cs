@@ -25,6 +25,13 @@ namespace Tweet_automation.Step_Definitions
             Twitter.HomePage.PostTweet();
         }
 
+        [When(@"I type the same tweet (.*)")]
+        public void WhenITypeTheSameTweet(string tweetText)
+        {
+            Twitter.HomePage.TypeTweetAgain(tweetText);
+        }
+
+
         [Then(@"the (.*) post appears on my home page")]
         public void ThenThePostAppearsOnMyHomePage(string tweetText)
         {
@@ -43,6 +50,11 @@ namespace Tweet_automation.Step_Definitions
             Twitter.HomePage.ValidateDeleteTweet();
         }
 
-
+        [Then(@"I get a notification of a repeat tweet")]
+        public void ThenIGetANotificationOfARepeatTweet()
+        {
+            Twitter.HomePage.ValidateRepeatNotification();
+            Twitter.HomePage.DismissNotification();
+        }
     }
 }
